@@ -1,0 +1,12 @@
+What are the strengths of your solution? 
+
+The strong points of my code and program are that it is well commented, it meets everything that was requested such as the name class, all data fields, constructors, all necessary accessors, 
+it is well encapsulated with private, so that there is no external access to the content, its logic is well done, the outputs are well structured and informative and the implementation of toString that allowed an easier way to print the state of the object. 
+
+What are the weaknesses? 
+
+Weak points of my code and program is that it has some problems in input validation since the withdraw and deposit do not check whether the values entered are negative or not, it also has error control limited to what was requested. 
+
+In what way could it be improved? 
+
+To improve my program I did some research and I believe I can improve input validation by adding checks for negative values, I can do more complete error control and with more robust feedback. 
