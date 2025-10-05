@@ -1,0 +1,10 @@
+How are you going to solve the problem? 
+
+When I identified the problem, I saw that it was necessary to create a Java class named account that contains attributes as defined in variables for id, balance annual interest rate and creation date. 
+I created objects of the account class, a standard constructor and one with a specific id and balance, I provided access control to the account data fields through get and set, I implemented some methods to calculate the monthly interest, withdraw and deposit. 
+
+What programming constructs and techniques are you using? Why? 
+
+Regarding the techniques and constructors, I used classes and objects, variables for store data with the encapsulation method that we learned last week to help protect the data from external access, 
+constructors with different parameters to have a more flexible code when creating an account, I also used get and set for greater access control and to provide efficient ways of manipulating data, good reading and validation. 
+I used the import java util date to show the date and time of the account creation in real time, the toString method to make it easier to print or debug and I formatted the output to show the currency value in decimal with the currency symbol. 
