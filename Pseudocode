@@ -1,0 +1,131 @@
+Start 
+
+Class Account 
+
+  
+
+private int id = 0 
+
+private double balance = 0 
+
+private double annualInterestRate = 0 
+
+private Date dateCreated 
+
+  
+
+constructor Account() 
+
+dateCreated = currentDate 
+
+ constructor Account(int newId, double newBalance) 
+
+id = newId 
+
+balance = newBalance 
+
+dateCreated = currentDate 
+
+  
+
+function getId() returns int 
+
+return id 
+
+  
+
+function getBalance() returns double 
+
+return balance 
+
+  
+
+function getAnnualInterestRate() returns double 
+
+return annualInterestRate 
+
+  
+
+function getDateCreated() returns Date 
+
+return dateCreated 
+
+  
+
+function setId(int newId) 
+
+id = newId 
+
+  
+
+function setBalance(double newBalance) 
+
+balance = newBalance 
+
+  
+
+function setAnnualInterestRate(double newRate) 
+
+annualInterestRate = newRate 
+
+  
+
+function getMonthlyInterestRate() returns double 
+
+return (annualInterestRate / 1200) 
+
+  
+
+function withdraw(double amount) 
+
+if amount <= balance then 
+
+balance = balance - amount 
+
+else 
+
+print "Insufficient funds" 
+
+  
+
+function deposit(double amount) 
+
+balance = balance + amount 
+
+  
+
+function toString() returns string 
+
+return "Account{id=" + id + ", balance=" + balance + ", annualInterestRate=" + annualInterestRate + ", dateCreated=" + dateCreated + "}" 
+
+end class 
+
+  
+
+program Main 
+
+Account myAccount = new Account(1122, 20000) 
+
+  
+
+myAccount.setAnnualInterestRate(4.5) 
+
+  
+
+myAccount.withdraw(2500) 
+
+myAccount.deposit(3000) 
+
+  
+
+print "Balance: $" + myAccount.getBalance() 
+
+print "Monthly Interest: $" + (myAccount.getBalance() * myAccount.getMonthlyInterestRate()) 
+
+print "Date Created: " + myAccount.getDateCreated() 
+
+print myAccount 
+
+  
+
+End program 
