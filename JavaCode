@@ -1,0 +1,96 @@
+Main.java 
+
+import java.util.Date; 
+
+public class Main { 
+
+public static void main(String[] args) { 
+    Account account = new Account(1122, 20000); /*Create an account with ID and initial balance*/ 
+    account.setAnnualInterestRate(4.5); /*et the annual interest rate*/ 
+ 
+    account.withdraw(2500); /*Withdraw funds*/ 
+    account.deposit(3000); /*deposit funds*/ 
+ 
+    System.out.println("Balance: " + account.getBalance() + "£"); /*Display current balance*/ 
+    System.out.println("Monthly Interest: " + (account.getBalance() * account.getMonthlyInterestRate()) + "£"); /*Display monthly interest*/ 
+    System.out.println("Date Created: " + account.getDateCreated()); /* Display the account creation date*/ 
+} 
+  
+
+} 
+
+ 
+
+Account.java 
+
+import java.util.Date; 
+ 
+public class Account { 
+ 
+    private int id; /*Unique identifier for the account*/ 
+    private double balance; /*Current balance of the account*/ 
+    private double annualInterestRate; /* Annual interest rate (as a percentage)*/ 
+    private Date dateCreated; /* The date the account was created*/ 
+ 
+    public Account() { // Default constructor (no arguments)*/ 
+        this(0, 0); /*Calls the constructor with default values for id and balance*/ 
+    } 
+ 
+    public Account(int id, double balance) { /*Constructor with initial values*/    this.id = id;/*Set the account ID*/ 
+        this.balance = balance; /*Set the initial balance*/ 
+        this.annualInterestRate = 0; /*Set the default annual interest rate*/ 
+        this.dateCreated = new Date(); /*Set the date the account was created*/ 
+    } 
+ 
+    public int getId() { /*Get method to retrieve the account ID*/ 
+        return id; 
+    } 
+ 
+    public void setId(int id) { /*Set method to set the account ID (usually not used)*/ 
+        this.id = id; 
+    } 
+ 
+    public double getBalance() { /*Get method to retrieve the current balance*/ 
+        return balance; 
+    } 
+ 
+    public void setBalance(double balance) { /*set method to set the balance (usually not used)*/ 
+        this.balance = balance; 
+    } 
+ 
+    public double getAnnualInterestRate() { /*Get method to retrieve the annual interest rate*/ 
+        return annualInterestRate; 
+    } 
+ 
+    public void setAnnualInterestRate(double annualInterestRate) { /* Set method to set the annual interest rate*/ 
+        this.annualInterestRate = annualInterestRate; 
+    } 
+ 
+    public Date getDateCreated() { /* Get method to retrieve the account creation date*/ 
+        return dateCreated; 
+    } 
+ 
+    public double getMonthlyInterestRate() { /*Calculates and returns the monthly interest rate*/ 
+        return annualInterestRate / 1200; /*Annual rate divided by 12 months and converted to a decimal*/ 
+    } 
+ 
+    public void withdraw(double amount) { /*Method to withdraw funds from the account*/ 
+        if (amount <= balance) { 
+            balance -= amount; /*Subtract the withdrawal amount from the balance*/ 
+        } else { 
+            System.out.println("Insufficient funds"); /* Inform the user about insufficient funds*/ 
+        } 
+    } 
+ 
+    public void deposit(double amount) { /*Method to deposit funds into the account*/ 
+        balance += amount; /* dd the deposit amount to the balance*/ 
+    } 
+ 
+ 
+    @Override 
+
+public String toString() { /*Overrides the default to string method to a more representation*/ 
+        return 
+                "Account{" + "id=" + id + ", balance=" + balance + ", annualInterestRate=" + annualInterestRate + ", dateCreated=" + dateCreated + '}'; 
+    } 
+} 
